@@ -7,6 +7,7 @@ class FirstArticlesMobileLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final storeStaticValues = context.read(firstFlowRiverpod);
 
     return Container(
       width: MediaQuery.of(context).size.width,
@@ -25,7 +26,7 @@ class FirstArticlesMobileLayout extends StatelessWidget {
                 labelText: 'Name *',
               ),
               onChanged: (value) {
-                context.read(firstFlowRiverpod).setName = value;
+                storeStaticValues.setName = value;
               },
               validator: (String value) {
                 return value.contains('@') ? 'Do not use the @ char.' : null;
@@ -46,12 +47,23 @@ class FirstArticlesMobileLayout extends StatelessWidget {
               },
             ),
           ),
+          Container(
+            padding: EdgeInsets.all(16),
+            child: Text(
+              'CurrentScreenIndex: ${storeStaticValues.currentScreenIndex}',
+              style: TextStyle(
+                fontSize: 32.0,
+              ),
+            ),
+          ),
           GestureDetector(
             child: FlatButton(
               onPressed: () {
-
-                Navigator.of(context)
-                    .pushReplacementNamed('firstScreenFlow/firstAboutScreen');
+                Navigator.of(context).pushReplacementNamed(
+                  storeStaticValues.nextPage(
+                    screenIndex: storeStaticValues.currentScreenIndex,
+                  ),
+                );
               },
               child: Text('Go to AboutScreen'),
               color: Colors.yellow,
