@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:hooks_riverpod/all.dart';
+
+final firstFlowRiverpod =
+  ChangeNotifierProvider((ref) => FirstFlowRiverpod());
 
 class FirstFlowRiverpod extends ChangeNotifier {
   String _greeting = 'Hello Riverpod';

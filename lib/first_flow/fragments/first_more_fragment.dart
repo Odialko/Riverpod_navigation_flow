@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 
 class FirstMoreMobileLayout extends StatelessWidget {
-  const FirstMoreMobileLayout({
-    this.onCompletePrevious,
-  });
 
-  final VoidCallback onCompletePrevious;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -14,15 +10,18 @@ class FirstMoreMobileLayout extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            '2. First More screen',
-            style: TextStyle(
-              fontSize: 32.0,
+          Container(
+            padding: EdgeInsets.all(16),
+            child: Text(
+              'First More screen',
+              style: TextStyle(
+                fontSize: 32.0,
+              ),
             ),
           ),
           GestureDetector(
             child: FlatButton(
-              onPressed: onCompletePrevious,
+              onPressed: () => {},
               child: Text('Go to the begining'),
               color: Colors.yellow,
             ),
