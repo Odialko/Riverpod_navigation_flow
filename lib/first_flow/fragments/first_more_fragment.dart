@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_navigator_flow/first_flow/first_flow_riverpod.dart';
-import 'package:flutter_navigator_flow/screens/home_screen.dart';
 import 'package:flutter_riverpod/all.dart';
 
 class FirstMoreMobileLayout extends StatelessWidget {
@@ -34,8 +33,19 @@ class FirstMoreMobileLayout extends StatelessWidget {
           GestureDetector(
             child: FlatButton(
               onPressed: () {
-                //To the begining
-
+                //TODO: Make it like in the NCBA (abstract class)
+                // Navigator.pushReplacementNamed(context, '/');
+                // Navigator.pushNamed(context, '/');
+                // Navigator.of(context).popUntil((route) => route.isFirst);
+                // Navigator.pop(context);
+                // Navigator.of(context).popUntil(ModalRoute.withName(
+                //     '/'
+                // ));
+                // Navigator.of(context).pushNamed(
+                //   storeStaticValues.nextPage(
+                //     screenIndex: storeStaticValues.currentScreenIndex,
+                //   ),
+                // );
               },
               child: Text('Go to the begining'),
               color: Colors.yellow,

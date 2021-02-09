@@ -8,7 +8,6 @@ class FirstMoreScreen extends StatelessWidget {
     return Scaffold(
       body: SafeArea(
         child: FirstMoreMobileLayout(),
-        // child: FirstMoreMobileLayout(onCompletePrevious: onCompletePrevious),
       ),
     );
   }

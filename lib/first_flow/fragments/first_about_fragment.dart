@@ -43,7 +43,8 @@ class FirstAboutMobileLayout extends StatelessWidget {
           GestureDetector(
             child: FlatButton(
               onPressed: () {
-                Navigator.of(context).pushReplacementNamed(
+                //TODO: Make it like in the NCBA (abstract class)
+                Navigator.pushNamed(context,
                   storeStaticValues.nextPage(
                     screenIndex: storeStaticValues.currentScreenIndex,
                   ),

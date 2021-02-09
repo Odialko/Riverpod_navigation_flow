@@ -9,30 +9,23 @@ final firstFlowRiverpod =
 
 class FirstFlowRiverpod extends ChangeNotifier {
   final Map<String, Widget> _routeMap = {
+    // '/': HomeScreen(),
     'firstScreenFlow/firstArticlesScreen': FirstArticlesScreen(),
     'firstScreenFlow/firstAboutScreen': FirstAboutScreen(),
     'firstScreenFlow/firstMoreScreen': FirstMoreScreen(),
+    // '/firstScreenFlow': FirstScreensFlow(),
   };
   Map<String, Widget> get routeMap => _routeMap;
 
   int _currentScreenIndex = 0;
   int get currentScreenIndex => _currentScreenIndex;
-  // set setCurrentScreenIndex(int index) {
-  //   _currentScreenIndex = index;
-  //   notifyListeners();
-  // }
 
   String nextPage({int screenIndex}) {
     _currentScreenIndex++;
     if(_currentScreenIndex == _routeMap.length) {
-      return '/';
-    } else {
-      return routeMap.keys.toList()[currentScreenIndex];
+      _currentScreenIndex = 0;
     }
-    // return routeMap.keys.toList()[currentScreenIndex];
-    // Navigator.of(context)
-    //     .pushReplacementNamed('firstScreenFlow/firstAboutScreen');
-    // notifyListeners();
+    return routeMap.keys.toList()[currentScreenIndex];
   }
 
 
